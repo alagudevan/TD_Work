@@ -1,4 +1,4 @@
-import Utils.{csvHelper, argsHelper}
+import utils.{csvHelper, argsHelper}
 import api.{Coefficient, ServiceQuadraticEquations}
 import scala.collection.mutable.ListBuffer
 
@@ -19,6 +19,12 @@ object Main {
     csvHelper.write_csv(output, s"${output_path}/output.csv")
   }
 
+  /**
+   * parse input lines and convert into a list of coefficients
+   * @param lst
+   * @param output_path
+   * @return
+   */
   private def parse_input(lst: List[String], output_path: String): List[Coefficient] = {
 
     var coefficients: List[Coefficient] = List.empty
@@ -44,6 +50,11 @@ object Main {
     coefficients
   }
 
+  /**
+   * function to calculate qe for each coefficient
+   * @param coefficients
+   * @return
+   */
   private def calculate_qe(coefficients: List[Coefficient]): List[String] = {
 
     val output_list = new ListBuffer[String]

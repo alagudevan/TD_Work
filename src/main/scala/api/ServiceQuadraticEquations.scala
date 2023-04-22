@@ -21,7 +21,7 @@ object ServiceQuadraticEquations extends TQuadraticEquations {
       None
     }
     else {
-      val d = calculateDiscriminant(coe)
+      val d = calculate_discriminant(coe)
       println(s"Calculate QE for coefficients a: ${coe.a}, b: ${coe.b}, c: ${coe.c}")
       d match {
         case Some(d) => {
@@ -46,7 +46,7 @@ object ServiceQuadraticEquations extends TQuadraticEquations {
    * @param c
    * @return Double or None.
    */
-  def calculateDiscriminant(coe: Coefficient): Option[Double] = {
+  def calculate_discriminant(coe: Coefficient): Option[Double] = {
 
     val d = coe.b * coe.b - 4 * coe.a * coe.c
 
